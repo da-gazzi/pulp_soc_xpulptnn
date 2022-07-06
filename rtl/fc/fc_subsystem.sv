@@ -119,7 +119,7 @@ module fc_subsystem #(
     generate
     if ( USE_IBEX == 0) begin: FC_CORE
     assign boot_addr = boot_addr_i;
-    riscv_core #(
+    riscv_nn_core #(
         .N_EXT_PERF_COUNTERS ( N_EXT_PERF_COUNTERS ),
         .PULP_SECURE         ( 1                   ),
         .PULP_CLUSTER        ( 0                   ),
@@ -127,7 +127,8 @@ module fc_subsystem #(
         .FP_DIVSQRT          ( USE_FPU             ),
         .SHARED_FP           ( 0                   ),
         .SHARED_FP_DIVSQRT   ( 2                   ),
-        .Zfinx               ( USE_ZFINX           )
+        .Zfinx               ( USE_ZFINX           ),
+        .TNN_EXTENSION       ( 1                   )
     ) lFC_CORE (
         .clk_i                 ( clk_i             ),
         .rst_ni                ( rst_ni            ),
