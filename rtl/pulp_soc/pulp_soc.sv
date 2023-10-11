@@ -41,6 +41,8 @@ module pulp_soc import dm::*; #(
     parameter int unsigned N_SPI  = 1,
     parameter int unsigned N_I2C  = 2,
     parameter USE_ZFINX           = 1,
+    parameter TNN_EXTENSION       = 1,
+    parameter TNN_UNSIGNED        = 0,
     localparam C2S_AW_WIDTH       = AXI_ID_IN_WIDTH+AXI_ADDR_WIDTH+AXI_USER_WIDTH+$bits(axi_pkg::len_t)+$bits(axi_pkg::size_t)+$bits(axi_pkg::burst_t)+$bits(axi_pkg::cache_t)+$bits(axi_pkg::prot_t)+$bits(axi_pkg::qos_t)+$bits(axi_pkg::region_t)+$bits(axi_pkg::atop_t)+1,
     localparam C2S_W_WIDTH        = AXI_USER_WIDTH+AXI_STRB_WIDTH_IN+AXI_DATA_IN_WIDTH+1,
     localparam C2S_R_WIDTH        = AXI_ID_IN_WIDTH+AXI_DATA_IN_WIDTH+AXI_USER_WIDTH+$bits(axi_pkg::resp_t)+1,
@@ -757,12 +759,14 @@ module pulp_soc import dm::*; #(
 `endif
 
     fc_subsystem #(
-        .CORE_TYPE  ( CORE_TYPE          ),
-        .USE_FPU    ( USE_FPU            ),
-        .CORE_ID    ( FC_CORE_CORE_ID    ),
-        .CLUSTER_ID ( FC_CORE_CLUSTER_ID ),
-        .USE_HWPE   ( USE_HWPE           ),
-        .USE_ZFINX  ( USE_ZFINX          )
+        .CORE_TYPE     ( CORE_TYPE          ),
+        .USE_FPU       ( USE_FPU            ),
+        .CORE_ID       ( FC_CORE_CORE_ID    ),
+        .CLUSTER_ID    ( FC_CORE_CLUSTER_ID ),
+        .USE_HWPE      ( USE_HWPE           ),
+        .USE_ZFINX     ( USE_ZFINX          ),
+        .TNN_EXTENSION ( TNN_EXTENSION      ),
+        .TNN_UNSIGNED  ( TNN_UNSIGNED       )
     ) fc_subsystem_i (
         .clk_i               ( s_soc_clk           ),
         .rst_ni              ( s_soc_rstn          ),

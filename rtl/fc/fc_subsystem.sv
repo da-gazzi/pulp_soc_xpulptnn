@@ -21,7 +21,9 @@ module fc_subsystem #(
     parameter TB_RISCV            = 0,
     parameter CORE_ID             = 4'h0,
     parameter CLUSTER_ID          = 6'h1F,
-    parameter USE_ZFINX           = 1
+    parameter USE_ZFINX           = 1,
+    parameter TNN_EXTENSION       = 1,
+    parameter TNN_UNSIGNED        = 0
 )
 (
     input  logic                      clk_i,
@@ -128,7 +130,8 @@ module fc_subsystem #(
         .SHARED_FP           ( 0                   ),
         .SHARED_FP_DIVSQRT   ( 2                   ),
         .Zfinx               ( USE_ZFINX           ),
-        .TNN_EXTENSION       ( 1                   )
+        .TNN_EXTENSION       ( TNN_EXTENSION       ),
+        .TNN_UNSIGNED        ( TNN_UNSIGNED        )
     ) lFC_CORE (
         .clk_i                 ( clk_i             ),
         .rst_ni                ( rst_ni            ),
