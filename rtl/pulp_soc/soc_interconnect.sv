@@ -277,6 +277,7 @@ module soc_interconnect
                                                     //per slave port
                                                     FallThrough: 1,       //Use the reccomended default config
                                                     LatencyMode: axi_pkg::CUT_MST_AX | axi_pkg::MuxW,
+                                                    PipelineStages: 0,
                                                     AxiIdWidthSlvPorts: AXI_MASTER_ID_WIDTH,
                                                     AxiIdUsedSlvPorts: AXI_MASTER_ID_WIDTH,
                                                     AxiAddrWidth: BUS_ADDR_WIDTH,
