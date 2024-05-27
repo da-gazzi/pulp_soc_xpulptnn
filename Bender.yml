@@ -22,7 +22,7 @@ dependencies:
   apb_gpio:               { git: "https://github.com/pulp-platform/apb_gpio.git", rev: "0e9f142f2f11278445c953ad011fce1c7ed85b66" }
   apb_node:               { git: "https://github.com/pulp-platform/apb_node.git", version: 0.1.1 }
   apb_interrupt_cntrl:    { git: "https://github.com/pulp-platform/apb_interrupt_cntrl.git", version: 0.1.1 }
-  axi:                    { git: "https://github.com/pulp-platform/axi.git", version: 0.29.1 }
+  axi:                    { git: "https://github.com/pulp-platform/axi.git", version: 0.39.3 }
   # axi_node:               { git: "https://github.com/pulp-platform/axi_node.git", version: 1.1.4 } # deprecated, replaced by axi_xbar (in axi repo)
   axi_slice:              { git: "https://github.com/pulp-platform/axi_slice.git", version: 1.1.4 } # deprecated, replaced by axi_cut (in axi repo)
   timer_unit:             { git: "https://github.com/pulp-platform/timer_unit.git", version: 1.0.2 }
@@ -30,8 +30,7 @@ dependencies:
   cluster_interconnect:   { git: "https://github.com/pulp-platform/cluster_interconnect.git", version: 1.1.1 }
   fpnew:                  { git: "https://github.com/pulp-platform/fpnew.git", version: 0.6.6 }
   jtag_pulp:              { git: "https://github.com/pulp-platform/jtag_pulp.git", rev: "v0.1" }
-  # cv32e40p:               { git: "https://github.com/pulp-platform/cv32e40p.git", rev: "pulpissimo-v3.4.0-rev3"}
-  riscv_nn:               { git: "git@iis-git.ee.ethz.ch:georgr/riscv-tnn.git", rev: "765c072caec47930a210b8440892a36bc0006d68"}
+  cv32e40p-tnn:           { git: "https://github.com/da-gazzi/cv32e40p-tnn.git", rev: "02b95649b301e4403d0dca070cb22c0ba68e3edd"}
   ibex:                   { git: "https://github.com/lowRISC/ibex.git", rev: "pulpissimo-v6.1.1" }
   scm:                    { git: "https://github.com/pulp-platform/scm.git", version: 1.0.1}
   generic_FLL:            { git: "https://github.com/pulp-platform/generic_FLL.git", rev: "1c92dc73a940392182fd4cb7b86f35649b349595" }
